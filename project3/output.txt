@@ -1,0 +1,34 @@
+
+=================Empirical Finance : Project QuantLib 3=================
+
+--------------Option Characteristics--------------
+Option type :                           Vanilla - Call
+Exercise :                              European
+Settlement Date :                       February 28th, 2019
+Maturity :                              February 26th, 2020
+Strike :                                120
+Underlying price :                      100
+Risk-free yield :                       4 %
+Div yield :                             0 %
+Vol :                                   25 %
+Time steps :                            300
+
+
+--------------Reference : Black-Scholes Method--------------
+Computing time :           	  0 sec
+Price :                          4.70761
+Delta :                          0.327411
+Gamma :                          0.0144797
+
+ 
+
+--------------JarrowRudd Method---------------
+## BEFORE ##
+Computing time :           	  0.024 sec
+Price :                          4.70003
+Delta :                          0.326986
+Gamma :                          0.0145017
+Delta diff (JR-BS) :             -0.000425148
+Gamma diff (JR-BS) :             2.19393e-05
+
+## AFTER ##

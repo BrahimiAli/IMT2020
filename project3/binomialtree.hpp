@@ -44,7 +44,7 @@ namespace QuantLib {
             driftPerStep_ = process->drift(0.0, x0_) * dt_;
         }
         Size size(Size i) const {
-            return i + 3;
+            return i + 1;
         }
         Size descendant(Size, Size index, Size branch) const {
             return index + branch;
@@ -153,7 +153,7 @@ namespace QuantLib {
             Size steps,
             Real strike);
         Real underlying(Size i, Size index) const {
-            return x0_ * std::pow(down_, Real(BigInteger(i) - BigInteger(index)) + 1)
+            return x0_ *  std::pow(down_, Real(BigInteger(i) - BigInteger(index)) + 1)
                 * std::pow(up_, Real(index) - 1);
             //return x0_ * std::pow(down_, Real(BigInteger(i)-BigInteger(index)))
             //         * std::pow(up_, Real(index) );

@@ -132,10 +132,11 @@ namespace QuantLib {
 ///////////////////////////////////////////////////////////////// AFTER ////////////////////////////////////////////////////////////////
         option.rollback(grid[0]);
         Array va0(option.values());
-        QL_ENSURE(va0.size() == 3, "Expect 3 nodes in grid at second step");
+        QL_ENSURE(va0.size() == 3, "Expect 3 nodes in grid at 0 step");
         Real p0u = va0[2]; // up
         Real p0m = va0[1]; // mid
         Real p0d = va0[0]; // down (low)
+
 
         Real s0u = lattice->underlying(0, 2); // up price
         Real s0m = lattice->underlying(0, 1); // middle price
@@ -146,7 +147,7 @@ namespace QuantLib {
         Real delta0u = (p0u - p0m) / d1;
         Real delta0d = (p0m - p0d) / d2;
         Real gamma = 2 * (delta0u - delta0d) / (d1 + d2);  // Taylor dev.
-        Real delta = delta0u - d1 * gamma / 2;  // Taylor dev. of p0u
+        Real delta = delta0u - d1 * gamma / 2 ;  // Taylor dev. of p0u
 
 
 ///////////////////////////////////////////////////////////////// BEFORE ////////////////////////////////////////////////////////////////
